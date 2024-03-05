@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/card.css">
+</head>
+<body>
+<main>
+    <div class="container_card" >
+        <div class="section-header">
+            <h2>Оплата заказа</h2>
+        </div>
+        <section class="card" id="card">
+            <div class="front">
+                <div class="brand-logo" id="brand-logo">
+                </div>
+                <img alt="chip" src="https://raw.githubusercontent.com/falconmasters/formulario-tarjeta-credito-3d/master/img/chip-tarjeta.png" class="chip">
+                <div class="details">
+                    <div class="group" id="number">
+                        <p class="label">Номер карты</p>
+                        <p class="number">#### #### #### ####</p>
+                    </div>
+                    <div class="flexbox">
+                        <div class="group" id="name">
+                            <p class="label"> Имя Фамилия</p>
+                            <p class="name">Иван Смирнов</p>
+                        </div>
+                        <div class="group" id="expiration">
+                            <p class="label">Дата</p>
+                            <p class="expiration"> <span class="month">MM</span> / <span class="year">ГГ</span> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="back">
+                <div class="magnetic-bar"></div>
+                <div class="details">
+                    <div class="group" id="signature">
+                        <div class="signature">
+                            <p></p>
+                        </div>
+                    </div>
+                    <div class="group" id="ccv">
+                        <p class="label">CCV</p>
+                        <p class="ccv"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <form action="" id="card-form" class="card-form active">
+            <div class="group">
+                <label for="inputNumber">Номер карты</label>
+                <input type="text" id="inputNumber" maxlength="19" autocomplete="off">
+            </div>
+            <div class="group">
+                <label for="inputHolder">Имя</label>
+                <input type="text" id="inputHolder" maxlength="19" autocomplete="off">
+            </div>
+            <div class="flexbox">
+                <div class="group expire">
+                    <label for="selectMonth">Дата</label>
+                    <div class="date">
+                        <div class="group-select">
+                            <select name="month" id="selectMonth">
+                                <option disabled selected> Месяц </option>
+                            </select>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                        <div class="group-select">
+                            <select name="year" id="selectYear">
+                                <option disabled selected> Год </option>
+                            </select>
+                            <i class="fas fa-angle-down"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="group ccv">
+                    <label for="inputCCV">CCV</label>
+                    <input type="text" id="inputCCV" maxlength="3">
+                </div>
+            </div>
+            <button type="submit" class="btn-submit"> Оплатить <span> </span> </button>
+        </form>
+    </div>
+</main>
+<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+<script src="scripts/card.js"></script>
+</body>
+</html>
