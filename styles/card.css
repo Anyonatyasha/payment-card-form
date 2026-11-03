@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+main * {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+.container_card {
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.section-header h2{
+    font-family: 'Oswald',sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    text-transform: uppercase;
+    color: #222222;
+    margin: 40px 0;
+}
+.card {
+    width: 100%;
+    max-width: 550px;
+    position: relative;
+    color: #fff;
+    transition: .3s ease all;
+    transform: rotateY(0deg);
+    transform-style: preserve-3d;
+    cursor: pointer;
+    z-index: 2;
+    border-radius: 1.5rem;
+}
+
+.card.active {
+    transform: rotateY(180deg);
+}
+
+.card > div {
+    padding: 30px;
+    border-radius: 15px;
+    min-height: 315px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.card .front {
+    background: #2F6046;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(0.65rem);
+}
+
+.front .brand-logo {
+    text-align: right;
+    min-height: 50px;
+}
+
+.front .brand-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 80px;
+}
+
+.front .chip {
+    width: 100%;
+    max-width: 50px;
+    margin-bottom: 20px;
+}
+
+.front .group .label {
+    font-size: 16px;
+    color: #FAF7F6;
+    margin-bottom: 5px;
+}
+
+.front .group .number,
+.front .group .name,
+.front .group .expiration {
+    color: #FAF7F6;
+    font-size: 22px;
+    text-transform: uppercase;
+
+}
+
+.front .flexbox {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+
+.back {
+    background: linear-gradient(
+            to bottom right,
+            rgba(255, 255, 255, 0.2),
+            rgba(255, 255, 255, 0.05)
+    );
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(0.8rem);
+
+    position: absolute;
+    top: 0;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+
+.back .magnetic-bar {
+    height: 40px;
+    background: #000;
+    width: 100%;
+    position: absolute;
+    top: 30px;
+    left: 0;
+}
+
+.back .details {
+    margin-top: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+}
+
+.back .details #signature {
+    width: 70%;
+    color: #000;
+}
+
+.back .details #signature .signature {
+    height: 40px;
+    background: repeating-linear-gradient(skyblue 0, skyblue 5px, orange 5px, orange 10px);
+}
+
+.back .details #signature .signature p{
+    line-height: 40px;
+    font-family: 'Liu Jian Mao Cao', cursive;
+    color: #000;
+    font-size: 30px;
+    padding: 0 10px;
+    text-transform: capitalize;
+}
+
+.back .details #ccv {
+    width: 20%;
+    color: #000;
+}
+
+.back .details #ccv .ccv {
+    background: #fff;
+    color: #000;
+    padding: 10px;
+    text-align: center;
+}
+
+.card-form {
+    margin-top: 20px;
+    border-radius: 10px;
+    z-index: 1;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+}
+
+
+
+.card-form label {
+    display: block;
+    color: #3b3e41;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.card-form  input,
+.card-form  select,
+.btn-submit {
+    border: 2px solid #CED6E0;
+    font-size: 18px;
+    height: 50px;
+    transition: .3s ease all;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 5px 12px;
+}
+
+.card-form input:hover,
+.card-form select:hover {
+    border: 2px solid #222222;
+}
+
+.card-form input:focus,
+.card-form select:focus {
+    outline: rgb(4,4,4);
+    box-shadow: 1px 7px 10px -5px rgba(90,116,148,0.3);
+}
+
+.card-form input {
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.card-form .flexbox {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+.date{
+    display: flex;
+}
+.date .group-select:first-of-type{
+    margin-right: 15px;
+}
+.card-form .ccv {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.card-form .group-select i {
+    position: absolute;
+    color: #CED6E0;
+    top: 18px;
+    right: 15px;
+    transition: .3s ease all;
+}
+
+.card-form .group-select:hover i {
+    color: #222222;
+}
+
+.card-form .btn-submit {
+    border: none;
+    padding: 10px;
+    font-size: 22px;
+    color: #fff;
+    background: #222222;
+    cursor: pointer;
+}
+
+@media (max-width: 648px) {
+    .card{
+        display: none;
+    }
+}
